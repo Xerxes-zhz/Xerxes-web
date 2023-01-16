@@ -1,0 +1,42 @@
+h4
+{
+    color: green;
+}
+/* 选择器优先级:style in tag > id > class > tag */
+/*可以指定某元素中的元素,后续三种都可以直接用在元素上，或加.用在类上
+package selector（a b）a中所有b，sub—selector(a>b)a子级的b，brother selector(a~b)a中b或b中a*/
+/* （a+b）相邻选择器 a后面紧邻同级的b */
+/* * {} 通用选择器 */
+/* (a,b)a和b (a b)a内b (a:b)a的伪类b (a.b)a内的b类 */
+
+
+/* ::before 表示在原始元素的实际内容之前表示一个可设置样式的子伪元素
+
+::after 在原始元素的实际内容之后立即表示一个可设置样式的子伪元素。 */
+#background::after
+{
+    content: "";
+    background-image: url('girl1.jpg'); 
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    background-color: rgba(0,0,1,.9);
+
+    position: absolute;  
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.body{
+    /* content: "";
+    background-image: url('girl1.jpg'); 
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    background-color: rgba(0,0,1,.9);
+
+    position: absolute;  
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <!--all-->
+    <head>
+        <title>title of whole page</title>
+        <!--this is comment tag-->
+        <!--style->CSS(Cascading Style Sheets) -->
+        <!--defualt style: display :none -->
+        <style>
+            h1 {color: red;}
+            h7 {color: blue;}
+            p {color:blueviolet;}
+        </style>
+        <!--base tag will influence<a> <link> <form> <img> 's relative path -->
+        <!-- <base href="https://github.com/Xerxes-zhz/Xerxes-web/blob/main/"> -->
+        <link rel="stylesheet" type="text/css" href="theme.css">
+        <!--meta.attr=>name,charset, http-equiv-->
+        <!--meta tag defines matadata about an HTML document-->
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="300">
+        <meta name="author" content="Xerxes-zhz">
+        <meta name="description" content="This is my website develope learning">
+        <!--meta keywords are made for searching engine-->
+        <meta name="keywords" content="trash web">
+        <meta name="revised" content="v1.00">
+        
+    </head>
+    <body id="background" class="body">
+        <!--there can only be one body element in HTML-->
+        <p style="background-color: green;">This <br>is<br>made<br>for<br>a<br>background-image</p>
+        <h1>heading 1st</h1>
+        <h2>heading 2nd</h2>
+        <h3>heading 3rd</h3>
+        <h4>heading 4th</h4>
+        <h5>heading 5th</h5>
+        <h6>heading 6th</h6>
+        <h7>h7 is nothing like heading in markdown</h7>
+        <p>paragraph</p>
+        <p>lang=en,也可输中文</p>
+        <p>&lt;hr&gt; is horizontal rule<hr></p>
+    
+        <p>
+            paragraph could break with&lt;br&gt;<br>
+            but&lt;br&gt; won't add space between paragraphs like &lt;p&gt;<br>
+            escape character could be display with &amp; like &amp;nbsp; means no-break space
+        </p>
+        <hr>
+        <a href="https://github.com/Xerxes-zhz/Xerxes-web/" target="_blank">github</a>
+        <img src="girl.jpg">
+        <!--if put the script out of body, it will be load after Dom created, and will flash for a moment-->
+        <!-- if put the scipt in head tag, the web will be slow-->
+        <!-- async will be better -->
+        <script type="text/javascript" src="脚本路径" async></script>
+        <script>
+            console.log(1)
+        </script>
+        <noscript>It will show if the browser can't support javascript</noscript>
+    </body>
+</html>
