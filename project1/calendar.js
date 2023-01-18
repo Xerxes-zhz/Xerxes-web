@@ -43,7 +43,7 @@ const renderCalendar = () =>{
         checkTr();
     }
     
-    monthTag.innerHTML=`${currentYear}年${currentMonth+1}月`
+    monthTag.innerHTML=`${months_en[currentMonth]} ${currentYear}`
     function checkTr(){
         console.log(td_count)
         if(td_count%7==0){
