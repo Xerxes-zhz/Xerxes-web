@@ -1,10 +1,15 @@
 const tableTag = document.querySelector("#day"),
-monthTag = document.querySelector("#month"),
-table = document.getElementsByTagName('table')[0];
+monthTag = document.querySelector("#month");
 
-let date = new Date(),
-currentYear = date.getFullYear(),
-currentMonth = date.getMonth();
+let dateToday = new Date(), 
+currentYear = 0,
+currentMonth = 0;
+
+function getToday(){
+    currentYear = dateToday.getFullYear();
+    currentMonth = dateToday.getMonth();
+}
+getToday()
 
 const months_en = ["January", "February", "March", "April", "May", "June", "July",
 "August", "September", "October", "November", "December"] 
@@ -28,7 +33,7 @@ const renderCalendar = () =>{
     }
     //days in the month
     for(let i=1;i<=lastDateCurrentMonth;i++){
-        if (i===date.getDate() && currentYear === date.getFullYear() && currentMonth === date.getMonth()){
+        if (i===dateToday.getDate() && currentYear === dateToday.getFullYear() && currentMonth === dateToday.getMonth()){
             td_tag += `<td class="active today"><font class="f">${i}</font></td>`
         }else{
             td_tag += `<td class="active" ><font class="f">${i}</font</td>`
@@ -45,15 +50,57 @@ const renderCalendar = () =>{
     
     monthTag.innerHTML=`${months_en[currentMonth]} ${currentYear}`
     function checkTr(){
-        console.log(td_count)
         if(td_count%7==0){
-            table.insertRow
-            tr_tag = `<tr>${td_tag}</tr>`
-            tableTag.innerHTML+=tr_tag;
+            tr_tag += `<tr>${td_tag}</tr>`
             td_tag=""
         }
         
     }
+    tableTag.innerHTML=tr_tag;
 
 }
+function clickFunc(direction){
+    function isMonth(month){
+        if (month<0 || month>11){
+            return false
+        }else{
+            return true
+        }
+    }
+    if(direction==="next"){
+        currentMonth++;
+    }else if(direction==="prev"){
+        currentMonth--;
+    }
+    if(!isMonth(currentMonth)){
+        newDate = new Date(currentYear,currentMonth,1);
+        currentYear = newDate.getFullYear();
+        currentMonth = newDate.getMonth();
+    }
+    renderCalendar();
+
+}
+
 renderCalendar();
+
+function display_pop_up(){
+    document.getElementById("timeSelect").style.display='inline'
+}
+function go_to_date(){
+    undisplay_pop_up()
+    input = document.querySelectorAll(".windowPopUp input")
+    currentYear =  input[0].value
+    currentMonth = input[1].value
+    if(currentYear && currentMonth){
+        renderCalendar()
+    }
+   
+}
+function undisplay_pop_up(){
+    document.getElementById("timeSelect").style.display='none'
+}
+function go_to_today(){
+    undisplay_pop_up()
+    getToday()
+    renderCalendar()
+}

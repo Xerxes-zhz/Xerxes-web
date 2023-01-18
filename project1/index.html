@@ -8,8 +8,9 @@
 
 
     </head>
-    <body>
+    <body onload=getNow()>
         <h1>Xerxes-web</h1>
+        <div id="clock"></div>
         <nav>
             
             <a href="https://github.com/"><div>git</div></a> 
@@ -18,7 +19,10 @@
         <table id="calendar">
             <thead>
                 <tr>
-                    <th id="month" colspan="7">Month Year</th>
+                    <th><button class="icon" id="prev" onclick="clickFunc('prev')"><img src="./images/arrow-calendar-left.ico"> </button></th>
+                    <th id="month" colspan="5" onclick="display_pop_up()">Month Year</th>
+                    <th><button class="icon" id="next" onclick="clickFunc('next')"><img src="./images/arrow-calendar-right.ico"></button></th>
+
                 </tr>
                 <tr>
                     <th>Sun.</th>
@@ -30,9 +34,19 @@
                     <th>Sat.</th>
                 </tr>
             </thead>
-            <tbody id="day">
-            </tbody>
+            <tbody id="day"></tbody>
+            <div class="windowPopUp" id="timeSelect">
+                <label for="yy">Year:</label> 
+                <input type="yy">
+                <label for="mm">Month:</label> 
+                <input type="mn">
+                <div id="windowPopUpButton">
+                    <button onclick="go_to_date()">Confirm</button>
+                    <button onclick="go_to_today()">Today</button>
+                </div>
+            </div>
         </table>
         <script src="calendar.js"></script>
+        <script src="clock.js"></script>
     </body>
 </html>
