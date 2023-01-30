@@ -1,0 +1,38 @@
+nav
+{
+    height: 70px;
+    width: 100%;
+    position:relative;
+    background-color: rgb(23, 211, 79);
+    /* flex 布局  go to 阮一峰 */
+    /* display: flex; */
+}
+nav ul{
+    list-style: none;
+    border: 1px black solid;
+    height: 70px;
+}
+nav ul li
+{
+    display: inline-block;
+    height: 70px;
+    width: 100px;
+    color: blue;
+    border: 1px black solid;
+
+    margin: 0px 10px;
+
+
+    /* mr.you said don't use it */
+    /* float: left; */
+    line-height: 70px;
+    text-align: center;
+
+    /* display: inline-block; */
+}
+li a{
+    display: block;
+}
+
+
+

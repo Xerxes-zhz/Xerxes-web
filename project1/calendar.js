@@ -57,8 +57,8 @@ const renderCalendar = () =>{
         
     }
     tableTag.innerHTML=tr_tag;
-
 }
+
 function clickFunc(direction){
     function isMonth(month){
         if (month<0 || month>11){
@@ -86,19 +86,22 @@ renderCalendar();
 function display_pop_up(){
     document.getElementById("timeSelect").style.display='inline'
 }
+
 function go_to_date(){
     undisplay_pop_up()
     input = document.querySelectorAll(".windowPopUp input")
-    currentYear =  input[0].value
-    currentMonth = input[1].value
-    if(currentYear && currentMonth){
+    if(input[0].value && inpuy[1].value){
+        currentMonth = input[1].value
+        currentYear =  input[0].value
         renderCalendar()
     }
    
 }
+
 function undisplay_pop_up(){
     document.getElementById("timeSelect").style.display='none'
 }
+
 function go_to_today(){
     undisplay_pop_up()
     getToday()

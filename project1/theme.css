@@ -112,7 +112,7 @@ table{
     height: 101px;
     z-index: 10;
     background-color: #fff;
-    /* display: none; */
+    display: none;
 }
 .windowPopUp input,label{
     margin-top: 10px;
